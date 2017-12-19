@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 3 elements to &apos;JPAProject/src/Entities&apos;&#x0A;- Original project: &apos;JPAProject&apos;&#x0A;- Destination element: &apos;JPAProject/src/Entities&apos;&#x0A;- Original elements:&#x0A;     data.Quiz.java&#x0A;     data.Answer.java&#x0A;     data.Question.java&#x0A;- Update references to refactored element" description="Move compilation units" destination="/src&lt;Entities" element1="/src&lt;data{Quiz.java" element2="/src&lt;data{Answer.java" element3="/src&lt;data{Question.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1513726164275" units="3" version="1.0"/>
+</session>

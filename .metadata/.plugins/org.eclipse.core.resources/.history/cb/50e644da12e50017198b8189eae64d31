@@ -1,0 +1,11 @@
+package data;
+
+import java.util.List;
+
+public interface QuizDAO {
+	public List<Quiz> index(); 
+	public Quiz show(); 
+	public Quiz create(); 
+	public Quiz update(); 
+	public Quiz destroy(); 
+}

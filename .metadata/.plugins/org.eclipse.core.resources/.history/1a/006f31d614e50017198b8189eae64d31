@@ -1,0 +1,69 @@
+package data;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import Entities.Quiz;
+@Transactional
+@Repository
+public class QuizDAOImpl implements QuizDAO {
+	@PersistenceContext
+	private EntityManager em; 
+	@Override
+	public List<Quiz> index() {
+		String query = "SELECT q FROM QUIZ q"; 
+		List<Quiz> quizzes = em.createQuery(query, Quiz.class).getResultList(); 
+		return quizzes; 
+	}
+
+	@Override
+	public Quiz show(int id) {
+		return em.find(Quiz.class, id);
+	}
+
+	@Override
+	public Quiz create(String jsonQuiz) {
+		ObjectMapper mapper = new ObjectMapper(); 
+		Quiz q = null; 
+		
+		try {
+			q = mapper.readValue(jsonQuiz, Quiz.class);
+			em.persist(q);
+			em.flush();
+		} catch (JsonParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+		return em.find(Quiz.class, q.getId());
+	}
+
+	@Override
+	public Quiz update(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Quiz destroy(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

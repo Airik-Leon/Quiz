@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MVCProject/WebContent/WEB-INF/skeleton-servlet.xml&apos; to &apos;Quiz-servlet.xml&apos;" description="Rename resource &apos;skeleton-servlet.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/WEB-INF/skeleton-servlet.xml" name="Quiz-servlet.xml" stamp="1513725261257" updateReferences="true"/>
+</session>

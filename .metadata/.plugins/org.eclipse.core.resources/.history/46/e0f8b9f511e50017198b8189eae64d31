@@ -1,0 +1,18 @@
+package data;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+
+public class Answer {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id; 
+	@JoinColumn(name="question_id")
+	private Question question; 
+	@Column(name="is_correct")
+	private boolean correct; 
+	@Column(name="answer")
+	private String text; 
+}

@@ -1,0 +1,37 @@
+package data;
+
+import java.util.List;
+
+public class QuizDAOImpl implements QuizDAO {
+
+	@Override
+	public List<Quiz> index() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Quiz show() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Quiz create() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Quiz update() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Quiz destroy() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,49 @@
+package data;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+@Transactional
+@Repository
+public class QuizDAOImpl implements QuizDAO {
+	@PersistenceContext
+	private EntityManager em; 
+	@Override
+	public List<Quiz> index() {
+		String query = "SELECT q FROM QUIZ q"; 
+		List<Quiz> quizzes = em.createQuery(query, Quiz.class).getResultList(); 
+		return quizzes; 
+	}
+
+	@Override
+	public Quiz show(int id) {
+		return em.find(Quiz.class, id);
+	}
+
+	@Override
+	public Quiz create(String jsonQuiz) {
+		ObjectMapper mapper = new ObjectMapper(); 
+		Quiz q = mapper.readValue(jsonQuiz, Quiz.class); 
+		
+		return em.find(Quiz.class, q.getId());
+	}
+
+	@Override
+	public Quiz update(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Quiz destroy(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
